@@ -2,6 +2,23 @@
 
 <main>
   <ul id="users">
-    <li><app-user/></li>
+    <li>
+      <app-user
+        [id]="users[0].id"
+        [avatar]="users[0].avatar"
+        [name]="users[0].name"
+        (select)="onSelected($event)"
+      />
+    </li>
+    <li>
+      <app-user
+      [id]="users[1].id"
+        [avatar]="users[1].avatar"
+        [name]="users[1].name"
+        (select)="onSelected($event)"
+      />
+    </li>
   </ul>
+  <app-task [name]="selectedUser.name"></app-task>
 </main>
+
